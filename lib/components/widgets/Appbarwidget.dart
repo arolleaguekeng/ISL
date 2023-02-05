@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-AppBar widgetAppBar() {
+AppBar widgetAppBar({required Widget backfunc, required Widget text}) {
   return AppBar(
-    title: const Text("GeeksforGeeks"),
+    leading: backfunc,
+    title: text,
     titleSpacing: 00.0,
     centerTitle: true,
     toolbarHeight: 60.2,
@@ -11,7 +12,7 @@ AppBar widgetAppBar() {
       borderRadius: BorderRadius.only(
           bottomRight: Radius.circular(25), bottomLeft: Radius.circular(25)),
     ),
-    elevation: 0.00,
-    backgroundColor: Colors.greenAccent[400],
+    elevation: 1.00,
+    backgroundColor: /*Colors.greenAccent[400]*/ Colors.white,
   );
 }

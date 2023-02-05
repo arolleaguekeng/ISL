@@ -2,7 +2,12 @@ class Job {
   final String? id;
   final String name;
   final String image;
-  Job({this.id, required this.name, required this.image});
+  bool isSelected;
+  Job(
+      {this.id,
+      required this.name,
+      required this.image,
+      this.isSelected = false});
 
   factory Job.fromJson(dynamic json) {
     return Job(
@@ -18,6 +23,6 @@ class Job {
 
   @override
   String toString() {
-    return 'Job:$id,name:$name,image:$image';
+    return 'Job:$id,name:$name,image:$image,isSelected:$isSelected';
   }
 }

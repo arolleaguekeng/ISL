@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:isl/services/localisation/localisation.dart';
 import './components/screens/choicePage.dart';
+import 'components/routes/custum_route.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'services/localisation/localization_constant.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +21,27 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      supportedLocales: [
+        Locale('fr', 'FR'),
+        Locale('en', 'US'),
+      ],
+      localizationsDelegates: [
+        DemoLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      localeResolutionCallback: (deviceLocale, supportedLocales) {
+        for (var locale in supportedLocales) {
+          if (locale.languageCode == deviceLocale!.languageCode &&
+              locale.countryCode == deviceLocale.countryCode) {
+            return deviceLocale;
+          }
+        }
+        return supportedLocales.first;
+      },
       home: ChoicePage(),
+      onGenerateRoute: CustomRoute.allRoutes,
     );
   }
 }

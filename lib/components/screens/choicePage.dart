@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:isl/components/routes/route_names.dart';
+import 'package:isl/components/screens/choiceEmploye.dart';
 import 'package:isl/components/screens/choiceJob.dart';
 import '../widgets/Powerded.dart';
 
@@ -78,11 +80,10 @@ class _ChoicePageState extends State<ChoicePage> {
                                 _color1 = Colors.blue;
                                 _color2 = Colors.transparent;
                               });
+                            },
+                            onDoubleTap: () {
                               print('Get this 2');
-                              Navigator.pushReplacement(context,
-                                  MaterialPageRoute(builder: (context) {
-                                return ChoiceJobPage();
-                              }));
+                              Navigator.pushNamed(context, choiceJob);
                             },
                             child: wantedJobCard(
                               color: _color1,
@@ -99,11 +100,10 @@ class _ChoicePageState extends State<ChoicePage> {
                                 _color2 = Colors.blue;
                                 _color1 = Colors.transparent;
                               });
+                            },
+                            onDoubleTap: () {
                               print('Get this 2');
-                              Navigator.pushReplacement(context,
-                                  MaterialPageRoute(builder: (context) {
-                                return ChoiceJobPage();
-                              }));
+                              Navigator.pushNamed(context, choiceEmployee);
                             },
                             child: wantedJobCard(
                               color: _color2,
