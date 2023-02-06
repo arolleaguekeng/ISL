@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-AppBar widgetAppBar({required Widget backfunc, required Widget text}) {
+AppBar widgetAppBar({
+  required Widget backfunc,
+  required Widget text,
+}) {
   return AppBar(
     leading: backfunc,
     title: text,

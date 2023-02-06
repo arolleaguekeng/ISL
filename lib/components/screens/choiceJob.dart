@@ -62,33 +62,38 @@ class _ChoiceJobPageState extends State<ChoiceJobPage> {
                 },
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 5,
-                vertical: 30,
-              ),
-              child: SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.blue,
-                    shape: const BeveledRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Next(${selectedJob.length})",
-                      style: GoogleFonts.poppins(
-                          color: Colors.white, fontSize: 20),
+            selectedJob.length > 0
+                ? Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 5,
+                      vertical: 30,
                     ),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.blue,
+                          shape: const BeveledRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Next(${selectedJob.length})",
+                            style: GoogleFonts.poppins(
+                                color: Colors.white, fontSize: 20),
+                          ),
+                        ),
+                        onPressed: () {
+                          print('Next List length :${selectedJob.length}');
+                        },
+                      ),
+                    ),
+                  )
+                : Container(
+                    height: 76,
                   ),
-                  onPressed: () {
-                    print('Next List length :${selectedJob.length}');
-                  },
-                ),
-              ),
-            ),
             bas(),
           ],
         ),

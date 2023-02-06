@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:isl/components/screens/homePage.dart';
 import 'package:isl/services/localisation/localisation.dart';
 import './components/screens/choicePage.dart';
 import 'components/routes/custum_route.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
         }
         return supportedLocales.first;
       },
-      home: ChoicePage(),
+      home: HomePage(),
       onGenerateRoute: CustomRoute.allRoutes,
     );
   }
