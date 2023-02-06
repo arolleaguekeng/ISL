@@ -1,14 +1,106 @@
 import 'package:isl/models/JobModel/job.dart';
 
-var JOB_DATAS = [
-  Job(id: "1", name: "Content Writer", image: "write", isSelected: false),
-  Job(id: "2", name: "Art & Design", image: "art", isSelected: true),
-  Job(id: "3", name: "Human Ressources", image: "humain", isSelected: false),
-  Job(id: "4", name: "Programmer", image: "pro", isSelected: false),
-  Job(id: "5", name: "Finances", image: "fin", isSelected: false),
-  Job(id: "6", name: "Custumer Services", image: "cus", isSelected: false),
-  Job(id: "7", name: "Fond and Restaurant", image: "rest", isSelected: false),
-  Job(id: "8", name: "Music Producer", image: "music", isSelected: false),
-  Job(id: "9", name: "Infirmeries", image: "inf", isSelected: false),
-  Job(id: "10", name: "Analist", image: "ana", isSelected: false)
+import '../EntrepriseModel/entreprise_data.dart';
+
+var JOB_DATA1 = [
+  Job(
+    name: "UI/UX Designer",
+    entreprise: ENTREPRISE_DATA[1],
+    price: "3.90",
+    type: "Full Time",
+  ),
+  Job(
+    name: "Comptable",
+    entreprise: ENTREPRISE_DATA[2],
+    price: "2.10",
+    type: "Permenant",
+  ),
+];
+
+var JOB_DATA2 = [
+  Job(
+    name: "Financial Planer",
+    entreprise: ENTREPRISE_DATA[3],
+    price: "2.50",
+    type: "Reboot",
+  ),
+  Job(
+    name: "Data Engineer",
+    entreprise: ENTREPRISE_DATA[4],
+    price: "4.00",
+    type: "Full Time",
+  ),
+];
+
+var JOB_DATA3 = [
+  Job(
+    name: "Product Designer",
+    entreprise: ENTREPRISE_DATA[5],
+    price: "2.01",
+    type: "Permenant",
+  ),
+  Job(
+    name: "Music Auditory",
+    entreprise: ENTREPRISE_DATA[0],
+    price: "5.10",
+    type: "Reboot",
+  ),
+];
+
+var JOB_DATA4 = [
+  Job(
+    name: "Secretaire",
+    entreprise: ENTREPRISE_DATA[5],
+    price: "3.90",
+    type: "Full Time",
+  ),
+  Job(
+    name: "Infirmier",
+    entreprise: ENTREPRISE_DATA[4],
+    price: "1.02",
+    type: "Permenant",
+  ),
+];
+var JOB_DATA5 = [
+  Job(
+    name: "Plombier",
+    entreprise: ENTREPRISE_DATA[3],
+    price: "2.10",
+    type: "Reboot",
+  ),
+  Job(
+    name: "Architecte",
+    entreprise: ENTREPRISE_DATA[2],
+    price: "4.10",
+    type: "Full Time",
+  ),
+];
+
+var JOB_DATA6 = [
+  Job(
+    name: "Architecte Reseau",
+    entreprise: ENTREPRISE_DATA[1],
+    price: "2.80",
+    type: "Permenant",
+  ),
+  Job(
+    name: "Comptable ",
+    entreprise: ENTREPRISE_DATA[0],
+    price: "2.10",
+    type: "Reboot",
+  ),
+];
+var JOB_DATA7 = [
+  Job(
+    name: "Developpeur",
+    entreprise: ENTREPRISE_DATA[5],
+    price: "2.67",
+    type: "Full Time",
+  ),
+  Job(
+    name: "Software Engineer",
+    entreprise: ENTREPRISE_DATA[4],
+    price: "3.90",
+    type: "Permenant",
+  ),
 ];

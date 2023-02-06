@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:isl/components/routes/route_names.dart';
-import 'package:isl/components/screens/choiceEmploye.dart';
-import 'package:isl/components/screens/choiceJob.dart';
 import '../widgets/Powerded.dart';
 
 import '../widgets/WantedJobCard.dart';
@@ -83,7 +81,7 @@ class _ChoicePageState extends State<ChoicePage> {
                             },
                             onDoubleTap: () {
                               print('Get this 2');
-                              Navigator.pushNamed(context, choiceJob);
+                              Navigator.pushNamed(context, choiceJobCategorie);
                             },
                             child: wantedJobCard(
                               color: _color1,

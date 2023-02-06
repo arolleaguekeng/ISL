@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:isl/components/screens/choiceJob.dart';
+import 'package:isl/components/screens/choiceJobCategorie.dart';
 import 'package:isl/components/screens/choicePage.dart';
 import '../../notfoundPage.dart';
 import 'route_names.dart';
@@ -11,8 +11,8 @@ class CustomRoute {
       case choiceRoute:
         r = MaterialPageRoute(builder: (_) => ChoicePage());
         break;
-      case choiceJob:
-        r = MaterialPageRoute(builder: (_) => ChoiceJobPage());
+      case choiceJobCategorie:
+        r = MaterialPageRoute(builder: (_) => ChoiceJobCategoriePage());
     }
     return r;
   }

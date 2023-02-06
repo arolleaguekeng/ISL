@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:isl/components/screens/HomePages/home.dart';
+import 'package:isl/components/screens/HomePages/list.dart';
+import 'package:isl/components/screens/HomePages/message.dart';
+import 'HomePages/profile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,6 +14,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int currentTab = 0;
+
+  final List<Widget> screens = [
+    Home(),
+    ListPage(),
+    MessagePage(),
+    ProfilePage(),
+  ];
+  final PageStorageBucket bucket = PageStorageBucket();
+  Widget currentPage = Home();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,10 +49,18 @@ class _HomePageState extends State<HomePage> {
         ),
         elevation: 1.00,
         backgroundColor: /*Colors.greenAccent[400]*/ Colors.white,
+        actions: [
+          IconButton(
+            onPressed: () {
+              print('Notification');
+            },
+            icon: const Icon(Icons.notifications, color: Colors.lightBlue),
+          )
+        ],
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(15),
           color: Colors.white,
         ),
         margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -50,7 +72,10 @@ class _HomePageState extends State<HomePage> {
           tabBackgroundColor: Colors.grey.shade200,
           padding: const EdgeInsets.all(10),
           onTabChange: (index) {
-            print(index);
+            setState(() {
+              currentPage = screens[index];
+              currentTab = index;
+            });
           },
           tabs: const [
             GButton(
@@ -72,10 +97,9 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [],
-        ),
+      body: PageStorage(
+        bucket: bucket,
+        child: currentPage,
       ),
     );
   }

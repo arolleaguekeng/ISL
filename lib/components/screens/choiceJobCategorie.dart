@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:isl/components/widgets/Powerded.dart';
-import 'package:isl/models/JobModel/job_data.dart';
+import 'package:isl/models/CategorieJobModel/categorieJob_data.dart';
+import 'package:isl/models/CategorieJobModel/categoriejob.dart';
 
 import '../../models/JobModel/job.dart';
 import '../widgets/Appbarwidget.dart';
 
-class ChoiceJobPage extends StatefulWidget {
-  const ChoiceJobPage({super.key});
+class ChoiceJobCategoriePage extends StatefulWidget {
+  const ChoiceJobCategoriePage({super.key});
 
   @override
-  State<ChoiceJobPage> createState() => _ChoiceJobPageState();
+  State<ChoiceJobCategoriePage> createState() => _ChoiceJobCategoriePageState();
 }
 
-class _ChoiceJobPageState extends State<ChoiceJobPage> {
+class _ChoiceJobCategoriePageState extends State<ChoiceJobCategoriePage> {
   Color _color = Colors.transparent;
-  List<Job> selectedJob = [];
+  List<CategorieJob> selectedJob = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,13 +53,13 @@ class _ChoiceJobPageState extends State<ChoiceJobPage> {
                   crossAxisSpacing: 20,
                   mainAxisSpacing: 20,
                 ),
-                itemCount: JOB_DATAS.length,
+                itemCount: CATEGORIESJOB_DATA.length,
                 itemBuilder: (BuildContext context, int index) {
                   return jobCard(
-                      job: JOB_DATAS[index],
+                      cjob: CATEGORIESJOB_DATA[index],
                       color: Colors.transparent,
                       index: index,
-                      isSelected: JOB_DATAS[index].isSelected);
+                      isSelected: CATEGORIESJOB_DATA[index].isSelected);
                 },
               ),
             ),
@@ -102,7 +103,7 @@ class _ChoiceJobPageState extends State<ChoiceJobPage> {
   }
 
   Widget jobCard(
-      {required Job job,
+      {required CategorieJob cjob,
       required Color color,
       required bool isSelected,
       required int index}) {
@@ -120,7 +121,7 @@ class _ChoiceJobPageState extends State<ChoiceJobPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                job.isSelected
+                cjob.isSelected
                     ? Icon(
                         Icons.check_circle,
                         color: Colors.blue[700],
@@ -140,7 +141,7 @@ class _ChoiceJobPageState extends State<ChoiceJobPage> {
                   Column(
                     children: [
                       Text(
-                        job.name,
+                        cjob.name,
                         style: GoogleFonts.poppins(fontSize: 15),
                         textAlign: TextAlign.center,
                       ),
@@ -155,13 +156,19 @@ class _ChoiceJobPageState extends State<ChoiceJobPage> {
       onTap: () {
         setState(() {
           color = Colors.blue;
-          JOB_DATAS[index].isSelected = !JOB_DATAS[index].isSelected;
-          if (JOB_DATAS[index].isSelected == true) {
-            selectedJob
-                .add(Job(name: job.name, image: "image", isSelected: true));
-          } else if (JOB_DATAS[index].isSelected == false) {
+          CATEGORIESJOB_DATA[index].isSelected =
+              !CATEGORIESJOB_DATA[index].isSelected;
+          if (CATEGORIESJOB_DATA[index].isSelected == true) {
+            selectedJob.add(
+              CategorieJob(
+                jobs: CATEGORIESJOB_DATA[index].jobs,
+                name: CATEGORIESJOB_DATA[index].name,
+                isSelected: true,
+              ),
+            );
+          } else if (CATEGORIESJOB_DATA[index].isSelected == false) {
             selectedJob.removeWhere(
-                (element) => element.name == JOB_DATAS[index].name);
+                (element) => element.name == CATEGORIESJOB_DATA[index].name);
           }
         });
       },
