@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:isl/components/screens/HomePages/home.dart';
 import 'package:isl/components/screens/homePage.dart';
 import 'package:isl/services/localisation/localisation.dart';
 import './components/screens/choicePage.dart';

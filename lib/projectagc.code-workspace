@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../../projectagc"
+		},
+		{
+			"path": "../../test"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../myportofolio"
+		},
+		{
+			"path": "../../devpea-site"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "test"
+	}
+}
