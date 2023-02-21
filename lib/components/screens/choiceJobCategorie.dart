@@ -3,8 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:isl/components/widgets/Powerded.dart';
 import 'package:isl/models/CategorieJobModel/categorieJob_data.dart';
 import 'package:isl/models/CategorieJobModel/categoriejob.dart';
-
-import '../../models/JobModel/job.dart';
 import '../widgets/Appbarwidget.dart';
 
 class ChoiceJobCategoriePage extends StatefulWidget {
@@ -17,6 +15,12 @@ class ChoiceJobCategoriePage extends StatefulWidget {
 class _ChoiceJobCategoriePageState extends State<ChoiceJobCategoriePage> {
   Color _color = Colors.transparent;
   List<CategorieJob> selectedJob = [];
+  @override
+  void initState() {
+    super.initState();
+    selectedJob = [];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

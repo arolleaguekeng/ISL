@@ -4,6 +4,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:isl/components/screens/HomePages/home.dart';
 import 'package:isl/components/screens/HomePages/list.dart';
 import 'package:isl/components/screens/HomePages/message.dart';
+import '../widgets/navbarUser.dart';
 import 'HomePages/profile.dart';
 
 class HomePage extends StatefulWidget {
@@ -27,10 +28,23 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavBarUser(),
+      drawerScrimColor: Colors.grey,
       appBar: AppBar(
-        leading: const Icon(
-          Icons.person_outline,
-          color: Colors.black,
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.menu,
+                color: Colors.black,
+                size: 25,
+              ),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            );
+          },
         ),
         title: Text(
           'Hello Adam',
@@ -41,13 +55,6 @@ class _HomePageState extends State<HomePage> {
         titleSpacing: 00.0,
         centerTitle: true,
         toolbarHeight: 60.2,
-        toolbarOpacity: 0.8,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-              bottomRight: Radius.circular(25),
-              bottomLeft: Radius.circular(25)),
-        ),
-        elevation: 1.00,
         backgroundColor: /*Colors.greenAccent[400]*/ Colors.white,
         actions: [
           IconButton(

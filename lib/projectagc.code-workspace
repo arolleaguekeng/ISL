@@ -4,9 +4,6 @@
 			"path": "../../projectagc"
 		},
 		{
-			"path": "../../test"
-		},
-		{
 			"path": ".."
 		},
 		{
@@ -14,6 +11,12 @@
 		},
 		{
 			"path": "../../devpea-site"
+		},
+		{
+			"path": "../../../Téléchargements/annuaires-master"
+		},
+		{
+			"path": "../../../../../opt/lampp/htdocs/test"
 		}
 	],
 	"settings": {
