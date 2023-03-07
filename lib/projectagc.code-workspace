@@ -17,6 +17,12 @@
 		},
 		{
 			"path": "../../../../../opt/lampp/htdocs/test"
+		},
+		{
+			"path": "../../leverfly"
+		},
+		{
+			"path": "../../Bayarm"
 		}
 	],
 	"settings": {
