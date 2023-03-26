@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:isl/components/screens/homes/homePage.dart';
 import 'package:isl/components/widgets/Powerded.dart';
 import 'package:isl/models/CategorieJobModel/categorieJob_data.dart';
 import 'package:isl/models/CategorieJobModel/categoriejob.dart';
@@ -25,8 +26,14 @@ class _ChoiceJobCategoriePageState extends State<ChoiceJobCategoriePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: widgetAppBar(
-        backfunc: const BackButton(
+        backfunc: BackButton(
           color: Colors.blue,
+          onPressed: () {
+            setState(() {
+              selectedJob = [];
+            });
+            Navigator.pop(context);
+          },
         ),
         text: Text(
           'What Job you want ?',
@@ -73,7 +80,13 @@ class _ChoiceJobCategoriePageState extends State<ChoiceJobCategoriePage> {
                     margin: const EdgeInsets.symmetric(horizontal: 15),
                     child: MaterialButton(
                       onPressed: () {
-                        print("${selectedJob.length}}");
+                        print("${selectedJob.length}");
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (__) {
+                            return HomePage();
+                          }),
+                        );
                       },
                       height: 40,
                       elevation: 0,

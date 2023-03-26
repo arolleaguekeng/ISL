@@ -1,5 +1,4 @@
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter/material.dart';
 
 class ProfileContent extends StatefulWidget {
   const ProfileContent({super.key});
@@ -11,6 +10,8 @@ class ProfileContent extends StatefulWidget {
 class _ProfileContentState extends State<ProfileContent> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Center(
+      child: Text('ss'),
+    );
   }
 }

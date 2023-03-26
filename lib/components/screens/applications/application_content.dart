@@ -1,5 +1,4 @@
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter/material.dart';
 
 class ApplicationContent extends StatefulWidget {
   const ApplicationContent({super.key});
@@ -11,6 +10,6 @@ class ApplicationContent extends StatefulWidget {
 class _ApplicationContentState extends State<ApplicationContent> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Center(child: Text('data'));
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:isl/components/screens/splashScreen/splashScreen_screen.dart';
 import 'package:isl/services/localisation/localisation.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'components/screens/ChoicesPages/choicePage.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
         }
         return supportedLocales.first;
       },
-      home: ChoicePage(),
+      home: SplashScreen(),
     );
   }
 }

@@ -12,6 +12,8 @@ class HomeContent extends StatefulWidget {
 class _HomeContentState extends State<HomeContent> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Center(
+      child: Text('ss'),
+    );
   }
 }

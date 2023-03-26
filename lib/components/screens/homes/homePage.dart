@@ -91,11 +91,11 @@ class _HomePageState extends State<HomePage> {
             ),
             GButton(
               icon: Icons.list,
-              text: 'Your',
+              text: 'Applications',
             ),
             GButton(
               icon: Icons.message,
-              text: 'Message',
+              text: 'Chat',
             ),
             GButton(
               icon: Icons.person,
