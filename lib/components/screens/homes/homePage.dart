@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:isl/components/screens/HomePages/home.dart';
-import 'package:isl/components/screens/HomePages/list.dart';
-import 'package:isl/components/screens/HomePages/message.dart';
-import '../widgets/navbarUser.dart';
-import 'HomePages/profile.dart';
+import 'package:isl/components/screens/Chats/chat_screen.dart';
+import 'package:isl/components/screens/Profiles/profile_Screen.dart';
+import 'package:isl/components/screens/applications/application_screen.dart';
+import 'package:isl/components/screens/homes/Home_Screen.dart';
+import '../../widgets/navbarUser.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,13 +18,13 @@ class _HomePageState extends State<HomePage> {
   int currentTab = 0;
 
   final List<Widget> screens = [
-    Home(),
-    ListPage(),
-    MessagePage(),
-    ProfilePage(),
+    HomeScreen(),
+    ApplicationScreen(),
+    ChatScreen(),
+    ProfileScreen(),
   ];
   final PageStorageBucket bucket = PageStorageBucket();
-  Widget currentPage = Home();
+  Widget currentPage = HomeScreen();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

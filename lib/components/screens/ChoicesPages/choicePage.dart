@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:isl/components/routes/route_names.dart';
-import '../widgets/Powerded.dart';
-
-import '../widgets/WantedJobCard.dart';
+import '../../widgets/Powerded.dart';
+import '../../widgets/WantedJobCard.dart';
+import 'choiceEmploye.dart';
+import 'choiceJobCategorie.dart';
 
 class ChoicePage extends StatefulWidget {
   const ChoicePage({super.key});
@@ -19,6 +19,7 @@ class _ChoicePageState extends State<ChoicePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: bas(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -81,7 +82,10 @@ class _ChoicePageState extends State<ChoicePage> {
                             },
                             onDoubleTap: () {
                               print('Get this 2');
-                              Navigator.pushNamed(context, choiceJobCategorie);
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (__) {
+                                return ChoiceJobCategoriePage();
+                              }));
                             },
                             child: wantedJobCard(
                               color: _color1,
@@ -101,7 +105,14 @@ class _ChoicePageState extends State<ChoicePage> {
                             },
                             onDoubleTap: () {
                               print('Get this 2');
-                              Navigator.pushNamed(context, choiceEmployee);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (__) {
+                                    return ChoiceEmployePage();
+                                  },
+                                ),
+                              );
                             },
                             child: wantedJobCard(
                               color: _color2,
@@ -119,7 +130,6 @@ class _ChoicePageState extends State<ChoicePage> {
                 ],
               ),
             ),
-            bas(),
           ],
         ),
       ),

@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:isl/components/widgets/Powerded.dart';
 import 'package:isl/models/CategorieJobModel/categorieJob_data.dart';
 import 'package:isl/models/CategorieJobModel/categoriejob.dart';
-import '../widgets/Appbarwidget.dart';
+import '../../widgets/Appbarwidget.dart';
 
 class ChoiceJobCategoriePage extends StatefulWidget {
   const ChoiceJobCategoriePage({super.key});
@@ -33,6 +33,7 @@ class _ChoiceJobCategoriePageState extends State<ChoiceJobCategoriePage> {
           style: GoogleFonts.poppins(color: Colors.black),
         ),
       ),
+      bottomNavigationBar: bas(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -48,7 +49,7 @@ class _ChoiceJobCategoriePageState extends State<ChoiceJobCategoriePage> {
             ),
             Container(
               margin: const EdgeInsets.only(top: 20),
-              height: 450,
+              height: 550,
               child: GridView.builder(
                 padding: const EdgeInsets.all(10),
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
@@ -68,38 +69,30 @@ class _ChoiceJobCategoriePageState extends State<ChoiceJobCategoriePage> {
               ),
             ),
             selectedJob.length > 0
-                ? Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 5,
-                      vertical: 30,
-                    ),
-                    child: SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.blue,
-                          shape: const BeveledRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
+                ? Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 15),
+                    child: MaterialButton(
+                      onPressed: () {
+                        print("${selectedJob.length}}");
+                      },
+                      height: 40,
+                      elevation: 0,
+                      splashColor: Colors.green,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      color: Colors.blue,
+                      child: Center(
+                        child: Text(
+                          "Next(${selectedJob.length})",
+                          style: TextStyle(color: Colors.white, fontSize: 18),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "Next(${selectedJob.length})",
-                            style: GoogleFonts.poppins(
-                                color: Colors.white, fontSize: 20),
-                          ),
-                        ),
-                        onPressed: () {
-                          print('Next List length :${selectedJob.length}');
-                        },
                       ),
                     ),
                   )
                 : Container(
                     height: 76,
                   ),
-            bas(),
           ],
         ),
       ),

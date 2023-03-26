@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:isl/components/screens/homePage.dart';
-import 'package:isl/components/screens/jobrecomm.dart';
 import 'package:isl/services/localisation/localisation.dart';
-import './components/screens/choicePage.dart';
-import 'components/routes/custum_route.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'components/screens/ChoicesPages/choicePage.dart';
 import 'services/localisation/localization_constant.dart';
 
 void main() {
@@ -42,8 +39,7 @@ class MyApp extends StatelessWidget {
         }
         return supportedLocales.first;
       },
-      home: HomePage(),
-      onGenerateRoute: CustomRoute.allRoutes,
+      home: ChoicePage(),
     );
   }
 }
